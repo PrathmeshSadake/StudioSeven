@@ -4,34 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quote Generator</title>
-    <link rel="icon" type="image/png" href="favicon.png">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="style/favicon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css"/>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style/css/style.css">
 </head>
 <body>
-<div class="quote-container">
-    <!-- Quote -->
-    <div class="quote-text">
-        <i class="fas fa-quote-left"></i>
-        <span id="quote">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat porro consequuntur unde consectetur qui ea vero.</span>
+    <div class="quote-container" id="quote-container">
+        <!-- Quote -->
+        <div class="quote-text">
+            <i class="fas fa-quote-left"></i>
+            <span id="quote"></span>
+        </div>
+        <!-- Author -->
+        <div class="quote-author">
+            <span id="author"></span>
+        </div>
+        <!-- Buttons -->
+        <div class="button-container">
+            <button class="twitter-button" id="twitter" title="Tweet This!">
+                <i class="fab fa-twitter"></i>
+            </button>
+            <button id="new-quote">New Quote</button>
+        </div>
     </div>
-    <!-- Author -->
-    <div class="quote-author">
-        <span id="author">- Buddha</span>
-    </div>
-    <!-- Buttons -->
-    <div class="button-container">
-        <!-- title property works when you hover on the element : Tweet this ! -->
-        <button class="twitter-button" id="twitter" title="Tweet This !">
-            <i class="fab fa-twitter"></i>
-        </button>
-        <button id="new-quote">
-           New Quote
-        </button>
-    </div>
-</div>
+    <!-- Loader -->
+    <div class="loader" id="loader"></div>
     <!-- Script -->
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
