@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { ReactComponent as Crown } from "../../assets/crown.svg";
 import "./header.styles.scss";
 import { auth } from "../../firebase/firebase.utils";
+import { connect } from "react-redux";
 
 const Header = ({ currentUser }) => {
   return (
@@ -14,7 +15,6 @@ const Header = ({ currentUser }) => {
         <Link className="option" to="/shop">
           SHOP
         </Link>
-
         <Link className="option" to="/shop">
           CONTACT
         </Link>
@@ -33,4 +33,10 @@ const Header = ({ currentUser }) => {
   );
 };
 
-export default Header;
+const mapStateToProps = (state) => {
+  return {
+    currentUser: state.user.currentUser,
+  };
+};
+
+export default connect(mapStateToProps, null)(Header);

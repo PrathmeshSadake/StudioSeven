@@ -23,7 +23,9 @@ class SignIn extends React.Component {
         email: "",
         password: "",
       });
-    } catch (error) {}
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   handleChange = (e) => {
