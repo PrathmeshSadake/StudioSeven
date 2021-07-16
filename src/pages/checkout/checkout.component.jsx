@@ -20,7 +20,9 @@ function Checkout({ cartItems, total }) {
           <span>NAME</span>
         </div>
         <div className="header-block">
-          <span> QUANTITY </span>
+          <span>
+            QUANTITY
+          </span>
         </div>
         <div className="header-block">
           <span>PRICE</span>
@@ -30,7 +32,7 @@ function Checkout({ cartItems, total }) {
         </div>
       </div>
       {cartItems.map((cartItem) => (
-        <CheckoutItem key={cartItem.id} item={cartItem} />
+        <CheckoutItem key={cartItem.id} cartItem={cartItem} />
       ))}
       <div className="total">
         <span>TOTAL: ${total}</span>
