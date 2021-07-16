@@ -14,14 +14,12 @@ const config = {
 export const createUserProfileDocument = async (userAuth, additionalData) => {
   //if user is not signed in
   if (!userAuth) return;
-  console.log("HElloe");
 
   //firestore returns query-reference and query-snapshot from firestore when we do a query request
-
   const userRef = firestore.doc(`users/${userAuth.uid}`);
-  console.log(userRef);
+  // console.log(userRef);
   const snapShot = await userRef.get();
-  console.log(snapShot);
+  // console.log(snapShot);
   //snapshot is only the data in document
   if (!snapShot.exists) {
     const { displayName, email } = userAuth;
