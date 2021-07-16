@@ -5,3 +5,10 @@ export const toggleCartHidden = () => {
     type: cartActionTypes.TOGGLE_CART_HIDDEN,
   };
 };
+
+export const addItem = (item) => {
+  return {
+    type: cartActionTypes.ADD_ITEMS_TO_CART,
+    payload: item,
+  };
+};
