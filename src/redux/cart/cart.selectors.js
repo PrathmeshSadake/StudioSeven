@@ -19,3 +19,9 @@ export const selectCartItemsCount = createSelector(
       0
     )
 );
+
+// Toggling hidden state of cart dropdown
+export const selectCartHidden = createSelector(
+  [selectCart],
+  (cart) => cart.hidden
+);
