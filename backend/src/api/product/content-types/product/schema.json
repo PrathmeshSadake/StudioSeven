@@ -31,7 +31,8 @@
     },
     "slug": {
       "type": "uid",
-      "required": true
+      "required": true,
+      "targetField": "title"
     },
     "price": {
       "type": "float",
