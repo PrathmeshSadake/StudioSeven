@@ -1,11 +1,10 @@
+import React from "react";
 import { useQuery } from "urql";
-import CTA from "../components/CTA";
-import Hero from "../components/Hero";
 
 import Product from "../components/Product";
 import { PRODUCT_QUERY } from "../lib/query";
 
-export default function Home() {
+const products = () => {
   const [result, reexecuteQuery] = useQuery({
     query: PRODUCT_QUERY,
   });
@@ -17,17 +16,17 @@ export default function Home() {
     return <p className='text-xl font-semibold'>Oh no... {error.message}</p>;
 
   return (
-    <div className='mx-auto max-w-7xl px-2 pt-2 pb-32 sm:pt-48 sm:pb-40'>
-      <Hero />
-      <h1 className='px-2 text-2xl font sm:font-medium tracking-tight text-gray-900 sm:text-4xl'>
+    <div className='mx-auto max-w-7xl pt-20 pb-32 sm:pt-48 sm:pb-40'>
+      <h1 className='text-3xl font font-semibold tracking-tight text-gray-900 sm:text-4xl'>
         BEST OF STUDIO SEVEN EXCLUSIVE
       </h1>
-      <div className='px-2 my-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8'>
+      <div className='my-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8'>
         {data.products.data.map(({ attributes }) => (
           <Product product={attributes} />
         ))}
       </div>
-      <CTA />
     </div>
   );
-}
+};
+
+export default products;

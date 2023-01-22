@@ -1,14 +1,30 @@
 import "../styles/globals.css";
+import { Poppins } from "@next/font/google";
 import { createClient, Provider } from "urql";
 
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+
 const client = createClient({
-  url: "http://localhost:1337/graphql",
+  url: process.env.NEXT_PUBLIC_BACKEND_API,
+});
+
+const poppins = Poppins({
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  style: ["normal", "italic"],
 });
 
 export default function App({ Component, pageProps }) {
   return (
     <Provider value={client}>
+      <style jsx global>{`
+        html {
+          font-family: ${poppins.style.fontFamily};
+        }
+      `}</style>
+      <Navbar />
       <Component {...pageProps} />
+      <Footer />
     </Provider>
   );
 }

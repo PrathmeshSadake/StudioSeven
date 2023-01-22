@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 const CTA = () => {
@@ -16,13 +17,13 @@ const CTA = () => {
                 Up to 50% off.
               </h2>
               <div className='mt-6 text-base'>
-                <a href='#' className='font-medium text-white'>
+                <Link href='/products' className='font-medium text-white'>
                   Shop now<span aria-hidden='true'> &rarr;</span>
-                </a>
+                </Link>
               </div>
             </div>
 
-            <div className='absolute -top-32 left-1/2 transform -translate-x-1/2 sm:top-6 sm:translate-x-0'>
+            <div className='hidden md:block absolute -top-32 left-1/2 transform -translate-x-1/2 sm:top-6 sm:translate-x-0'>
               <div className='ml-24 flex space-x-6 min-w-max sm:ml-3 lg:space-x-8'>
                 <div className='flex space-x-6 sm:flex-col sm:space-x-0 sm:space-y-6 lg:space-y-8'>
                   <div className='flex-shrink-0'>
