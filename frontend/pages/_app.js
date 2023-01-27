@@ -4,6 +4,7 @@ import { createClient, Provider } from "urql";
 
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import { StateContext } from "../lib/context";
 
 const client = createClient({
   url: process.env.NEXT_PUBLIC_BACKEND_API,
@@ -16,15 +17,17 @@ const poppins = Poppins({
 
 export default function App({ Component, pageProps }) {
   return (
-    <Provider value={client}>
-      <style jsx global>{`
-        html {
-          font-family: ${poppins.style.fontFamily};
-        }
-      `}</style>
-      <Navbar />
-      <Component {...pageProps} />
-      <Footer />
-    </Provider>
+    <StateContext>
+      <Provider value={client}>
+        <style jsx global>{`
+          html {
+            font-family: ${poppins.style.fontFamily};
+          }
+        `}</style>
+        <Navbar />
+        <Component {...pageProps} />
+        <Footer />
+      </Provider>
+    </StateContext>
   );
 }

@@ -82,7 +82,7 @@ const Navbar = () => {
           aria-label='Top'
           className='relative z-20 bg-white bg-opacity-90 backdrop-filter backdrop-blur-xl'
         >
-          <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
+          <div className='2xl:container 2xl:mx-auto lg:px-20 md:px-6 px-4 '>
             <div className='h-16 flex items-center'>
               <button
                 type='button'
