@@ -17,7 +17,18 @@ export const StateContext = ({ children }) => {
   };
 
   const onAdd = (product, quantity) => {
-    
+    const exist = cartItems.find((item) => item.slug == product.slug);
+    if (exist) {
+      setCartItems(
+        cartItems.map((item) =>
+          item.slug === product.slug
+            ? { ...exist, quantity: exist.quantity + quantity }
+            : item
+        )
+      );
+    } else {
+      setCartItems([...cartItems, { ...product, quantity: quantity }]);
+    }
   };
 
   return (
