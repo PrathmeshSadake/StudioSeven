@@ -3,9 +3,11 @@ import { useRouter } from "next/router";
 import Head from "next/head";
 import Link from "next/link";
 import { useQuery } from "urql";
+import toast from "react-hot-toast";
 import { GET_PRODUCT_QUERY } from "../../lib/query";
 import ProductsGrid from "../../components/ProductsGrid";
 import { useStateContext } from "../../lib/context";
+import LoadingScreen from "../../components/LoadingScreen";
 
 export default function Product() {
   const router = useRouter();
@@ -21,9 +23,15 @@ export default function Product() {
   const { data, fetching, error } = result;
   // console.log(data.products.data[0]);
 
-  if (fetching) return <p className='text-xl font-semibold'>Loading...</p>;
+  if (fetching) return <LoadingScreen />;
   if (error)
     return <p className='text-xl font-semibold'>Oh no... {error.message}</p>;
+
+  // Create a Toast
+  const notify = (title) =>
+    toast.success(`${title} added to your cart`, {
+      duration: 1500,
+    });
 
   return (
     <>
@@ -197,7 +205,10 @@ export default function Product() {
             </div>
             {data && (
               <button
-                onClick={() => onAdd(data.products.data[0].attributes, qty)}
+                onClick={() => {
+                  onAdd(data.products.data[0].attributes, qty);
+                  notify(data.products.data[0].attributes.title);
+                }}
                 className='focus:outline-none focus:ring-2 hover:bg-black focus:ring-offset-2 focus:ring-gray-800 font-medium text-base leading-4 text-white bg-gray-800 w-full py-5 lg:mt-12 mt-6'
               >
                 Add to shopping bag

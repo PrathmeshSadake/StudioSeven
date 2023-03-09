@@ -1,6 +1,7 @@
 import { useQuery } from "urql";
 import CTA from "../components/CTA";
 import Hero from "../components/Hero";
+import LoadingScreen from "../components/LoadingScreen";
 
 import Product from "../components/Product";
 import { PRODUCT_QUERY } from "../lib/query";
@@ -12,7 +13,7 @@ export default function Home() {
 
   const { data, fetching, error } = result;
 
-  if (fetching) return <p className='text-xl font-semibold'>Loading...</p>;
+  if (fetching) return <LoadingScreen />;
   if (error)
     return <p className='text-xl font-semibold'>Oh no... {error.message}</p>;
 

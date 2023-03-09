@@ -1,6 +1,8 @@
 import "../styles/globals.css";
 import { Poppins } from "@next/font/google";
 import { createClient, Provider } from "urql";
+import { UserProvider } from "@auth0/nextjs-auth0/client";
+import { Toaster } from "react-hot-toast";
 
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -17,17 +19,20 @@ const poppins = Poppins({
 
 export default function App({ Component, pageProps }) {
   return (
-    <StateContext>
-      <Provider value={client}>
-        <style jsx global>{`
-          html {
-            font-family: ${poppins.style.fontFamily};
-          }
-        `}</style>
-        <Navbar />
-        <Component {...pageProps} />
-        <Footer />
-      </Provider>
-    </StateContext>
+    <UserProvider>
+      <StateContext>
+        <Provider value={client}>
+          <Toaster />
+          <style jsx global>{`
+            html {
+              font-family: ${poppins.style.fontFamily};
+            }
+          `}</style>
+          <Navbar />
+          <Component {...pageProps} />
+          <Footer />
+        </Provider>
+      </StateContext>
+    </UserProvider>
   );
 }

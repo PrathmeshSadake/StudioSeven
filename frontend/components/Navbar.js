@@ -10,10 +10,13 @@ import {
   Bars3Icon,
   MagnifyingGlassIcon,
   ShoppingBagIcon,
+  UserIcon,
   XMarkIcon,
 } from "@heroicons/react/24/outline";
+import Avatar from "react-avatar";
 
 import Logo from "../assets/studio-seven-logo.png";
+import { useUser } from "@auth0/nextjs-auth0/client";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -23,6 +26,8 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [cartOpen, setCartOpen] = useState(false);
   const { qty, increaseQty, decreaseQty, onAdd, cartItems } = useStateContext();
+  const { user, error, isLoading } = useUser();
+  console.log(user);
 
   const router = useRouter();
 
@@ -70,12 +75,20 @@ const Navbar = () => {
 
               <div className='border-t border-gray-200 py-6 px-4 space-y-6'>
                 <div className='flow-root'>
-                  <a
-                    href='#'
-                    className='-m-2 p-2 block font-medium text-gray-900'
-                  >
-                    Sign in
-                  </a>
+                  {!user ? (
+                    <UserIcon
+                      onClick={() => router.push("/api/auth/login")}
+                      className='h-6 w-6 cursor-pointer text-gray-400 group-hover:text-gray-500'
+                    />
+                  ) : (
+                    <Avatar
+                      name={user.name}
+                      src={user.picture}
+                      round={true}
+                      size='32'
+                      onClick={() => router.push(`/profile`)}
+                    />
+                  )}
                 </div>
               </div>
             </div>
@@ -108,37 +121,36 @@ const Navbar = () => {
               {/* Logo */}
               <div className='ml-4 flex lg:ml-0'>
                 <Link href='/'>
-                  {/* <h5 className='text-xl font-semibold tracking-tight text-gray-900'>
-                    StudioSeven
-                  </h5> */}
                   <Image src={Logo} height={35} />
                 </Link>
               </div>
 
               <div className='ml-auto flex items-center'>
-                <div className='hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6'>
-                  <a
-                    href='#'
-                    className='text-sm font-medium text-gray-700 hover:text-gray-800'
-                  >
-                    Sign in
-                  </a>
-                  <span className='h-6 w-px bg-gray-200' aria-hidden='true' />
-                </div>
-
                 {/* Cart */}
-                <div className='ml-4 flow-root lg:ml-6'>
-                  <div className='group -m-2 p-2 flex items-center'>
+                <div className='flow-root lg:ml-6'>
+                  <div className='group -m-2 p-2 flex items-center lg:space-x-6'>
                     <ShoppingBagIcon
                       onClick={() => setCartOpen(true)}
-                      className='flex-shrink-0 h-6 w-6 text-gray-400 group-hover:text-gray-500'
+                      className='flex-shrink-0 h-8 w-8 text-gray-400 group-hover:text-gray-500'
                       aria-hidden='true'
                     />
-                    <span className='ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800'>
-                      0
-                    </span>
-                    <span className='sr-only'>items in cart, view bag</span>
                   </div>
+                </div>
+                <div className='ml-8 hidden lg:flex lg:flex-1 lg:items-center lg:justify-end '>
+                  {!user ? (
+                    <UserIcon
+                      onClick={() => router.push("/api/auth/login")}
+                      className='h-8 w-8 cursor-pointer text-gray-400 hover:text-gray-500'
+                    />
+                  ) : (
+                    <Avatar
+                      name={user.name}
+                      src={user.picture}
+                      size='32'
+                      round={true}
+                      onClick={() => router.push(`/profile`)}
+                    />
+                  )}
                 </div>
               </div>
             </div>
