@@ -1,0 +1,223 @@
+[
+  {
+    "name": "Relaxed Fit T-Shirt",
+    "price": 799,
+    "description": "Relaxed-fit T-shirt in soft cotton jersey with a round, rib-trimmed neckline, print motifs front and back and a reflective detail above the hem at the back.",
+    "images": [
+      {
+        "public_id": "products/relaxed_fit_tshirt_si5nsy.jpg",
+        "url": "https://res.cloudinary.com/prathmeshsadake/image/upload/v1680287139/products/relaxed_fit_tshirt_si5nsy.jpg"
+      }
+    ],
+    "rating": 4.5,
+    "category": "Topwear",
+    "seller": "Prathmesh Sadake",
+    "stock": 100,
+    "numberOfReviews": 5,
+    "reviews": []
+  },
+  {
+    "name": "Regular Fit Hoodie",
+    "price": 2699,
+    "description": "Long-sleeved hoodie in sweatshirt fabric made from a cotton blend with a soft brushed inside. Jersey-lined, drawstring hood, a kangaroo pocket, and ribbing at the cuffs and hem.",
+    "images": [
+      {
+        "public_id": "products/upstate_NYC_hoodie_wctzgw.webp",
+        "url": "https://res.cloudinary.com/prathmeshsadake/image/upload/v1680287133/products/upstate_NYC_hoodie_wctzgw.webp"
+      }
+    ],
+    "rating": 4.5,
+    "category": "Topwear",
+    "seller": "Prathmesh Sadake",
+    "stock": 100,
+    "numberOfReviews": 15,
+    "reviews": []
+  },
+  {
+    "name": "Relaxed Fit Zip-through hoodie",
+    "price": 1499,
+    "description": "Zip-through hoodie in sweatshirt fabric. Relaxed fit with a jersey-lined, drawstring hood, a zip down the front, diagonal, welt side pockets and ribbing at the cuffs and hem. Soft brushed inside.",
+    "images": [
+      {
+        "public_id": "products/relaxed_fit_zip_through_hoodie_oejszn.webp",
+        "url": "https://res.cloudinary.com/prathmeshsadake/image/upload/v1680287132/products/relaxed_fit_zip_through_hoodie_oejszn.webp"
+      }
+    ],
+    "rating": 4.5,
+    "category": "Topwear",
+    "seller": "Prathmesh Sadake",
+    "stock": 100,
+    "numberOfReviews": 25,
+    "reviews": []
+  },
+  {
+    "name": "Small Wallet",
+    "price": 1499,
+    "description": "Patterned wallet with a zip along the top and sides. Zip pull with a wrist strap, a D-ring at one corner and a zipped inner compartment. Lined. Height 8 cm. Width 11.5 cm.",
+    "images": [
+      {
+        "public_id": "products/small_wallet_ufjwgp.jpg",
+        "url": "https://res.cloudinary.com/prathmeshsadake/image/upload/v1680287133/products/small_wallet_ufjwgp.jpg"
+      }
+    ],
+    "rating": 4.5,
+    "category": "",
+    "seller": "Prathmesh Sadake",
+    "stock": 100,
+    "numberOfReviews": 51,
+    "reviews": []
+  },
+  {
+    "name": "Relaxed Fit Hoodie",
+    "price": 1499,
+    "description": "Hoodie in sweatshirt fabric made from a cotton blend. Relaxed fit with a jersey-lined, drawstring hood, a kangaroo pocket, long sleeves and wide ribbing at the cuffs and hem. Soft brushed inside.",
+    "images": [
+      {
+        "public_id": "products/relaxed_fit_hoodie_kbnd7b.jpg",
+        "url": "https://res.cloudinary.com/prathmeshsadake/image/upload/v1680287131/products/relaxed_fit_hoodie_kbnd7b.jpg"
+      }
+    ],
+    "rating": 4.5,
+    "category": "",
+    "seller": "Prathmesh Sadake",
+    "stock": 100,
+    "numberOfReviews": 5,
+    "reviews": []
+  },
+  {
+    "name": "Regular Fit Hoodie",
+    "price": 1999,
+    "description": "Relaxed-fit hoodie in printed sweatshirt fabric made from a cotton blend with a soft brushed inside. Lined hood with a wrapover front, dropped shoulders, long sleeves, a kangaroo pocket and ribbing at the cuffs and hem.",
+    "images": [
+      {
+        "public_id": "products/regular_fit_hoodie_ckwh1t.webp",
+        "url": "https://res.cloudinary.com/prathmeshsadake/image/upload/v1680287131/products/regular_fit_hoodie_ckwh1t.webp"
+      }
+    ],
+    "rating": 4.5,
+    "category": "",
+    "seller": "Prathmesh Sadake",
+    "stock": 100,
+    "numberOfReviews": 4,
+    "reviews": []
+  },
+  {
+    "name": "Relaxed Fit Polo",
+    "price": 499,
+    "description": "Short-sleeved polo shirt in soft cotton jersey. Relaxed fit with a collar, small V-shaped opening at the top and a straight-cut hem with a slit at each side.",
+    "images": [
+      {
+        "public_id": "products/relaxed_fit_polo_oool8h.jpg",
+        "url": "https://res.cloudinary.com/prathmeshsadake/image/upload/v1680287132/products/relaxed_fit_polo_oool8h.jpg"
+      }
+    ],
+    "rating": 4.5,
+    "category": "",
+    "seller": "Prathmesh Sadake",
+    "stock": 100,
+    "numberOfReviews": 65,
+    "reviews": []
+  },
+  {
+    "name": "",
+    "price": "",
+    "description": "",
+    "images": [
+      {
+        "public_id": "products/cargo_joggers_iu3nlk.jpg",
+        "url": "https://res.cloudinary.com/prathmeshsadake/image/upload/v1680287133/products/cargo_joggers_iu3nlk.jpg"
+      }
+    ],
+    "rating": 4.5,
+    "category": "",
+    "seller": "Prathmesh Sadake",
+    "stock": 100,
+    "numberOfReviews": 8,
+    "reviews": []
+  },
+  {
+    "name": "",
+    "price": "",
+    "description": "",
+    "images": [
+      {
+        "public_id": "",
+        "url": "https://res.cloudinary.com/prathmeshsadake/image/upload/v1680287132/products/shoulder_bag_crvmky.webp"
+      }
+    ],
+    "rating": 4.5,
+    "category": "",
+    "seller": "Prathmesh Sadake",
+    "stock": 100,
+    "numberOfReviews": 3,
+    "reviews": []
+  },
+  {
+    "name": "",
+    "price": "",
+    "description": "",
+    "images": [
+      {
+        "public_id": "",
+        "url": "https://res.cloudinary.com/prathmeshsadake/image/upload/v1680287132/products/backpack_l52yoy.jpg"
+      }
+    ],
+    "rating": 4.5,
+    "category": "",
+    "seller": "Prathmesh Sadake",
+    "stock": 100,
+    "numberOfReviews": 5,
+    "reviews": []
+  },
+  {
+    "name": "",
+    "price": "",
+    "description": "",
+    "images": [
+      {
+        "public_id": "",
+        "url": "https://res.cloudinary.com/prathmeshsadake/image/upload/v1680287132/products/trainers_qrspc6.webp"
+      }
+    ],
+    "rating": 4.5,
+    "category": "",
+    "seller": "Prathmesh Sadake",
+    "stock": 100,
+    "numberOfReviews": 5,
+    "reviews": []
+  },
+  {
+    "name": "",
+    "price": "",
+    "description": "",
+    "images": [
+      {
+        "public_id": "",
+        "url": "https://res.cloudinary.com/prathmeshsadake/image/upload/v1680287131/products/canvas_trainers_qomsv0.webp"
+      }
+    ],
+    "rating": 4.5,
+    "category": "",
+    "seller": "Prathmesh Sadake",
+    "stock": 100,
+    "numberOfReviews": 5,
+    "reviews": []
+  },
+  {
+    "name": "",
+    "price": "",
+    "description": "",
+    "images": [
+      {
+        "public_id": "",
+        "url": "https://res.cloudinary.com/prathmeshsadake/image/upload/v1680287131/products/5_rings_pack_ewtjed.webp"
+      }
+    ],
+    "rating": 4.5,
+    "category": "",
+    "seller": "Prathmesh Sadake",
+    "stock": 100,
+    "numberOfReviews": 5,
+    "reviews": []
+  }
+]
