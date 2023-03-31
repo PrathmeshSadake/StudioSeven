@@ -45,15 +45,7 @@ const productSchema = new mongoose.Schema(
       type: String,
       required: [true, "Please enter product category"],
       enum: {
-        values: [
-          "Topwear",
-          "Bottomwear",
-          "Footwear",
-          "Sports & Active Wear",
-          "Western Wear",
-          "Indian & Fusion Wear",
-          "Beauty & Personal Care",
-        ],
+        values: ["Topwear", "Bottomwear", "Footwear", "Accessories"],
         message: "Product category is invalid",
       },
     },
