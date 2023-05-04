@@ -3,14 +3,14 @@ import NextAuth from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
 
-import prisma from "@/prisma/prisma";
+import prisma from "../../../../prisma/prisma";
 
 export const authOptions = {
   adapter: PrismaAdapter(prisma),
   providers: [
     GoogleProvider({
-      clientId: process.env.GOOGLE_CLIENT_ID as string,
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET as string,
+      clientId: process.env.GOOGLE_CLIENT_ID,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
     }),
   ],
   pages: {
@@ -31,7 +31,7 @@ export const authOptions = {
   events: {
     createUser: async ({ user }) => {
       // Create stripe API client using the secret key env variable
-      const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string, {
+      const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
         apiVersion: "2022-11-15",
       });
 
