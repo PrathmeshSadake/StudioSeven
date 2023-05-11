@@ -11,6 +11,7 @@ import { signOut, useSession } from "next-auth/react";
 import Link from "next/link";
 import Image from "next/image";
 import useCartStore from "@/store";
+import formatPrice from "@/utils/priceFormat";
 
 const navigation = [
   { name: "Dashboard", href: "#", current: true },
@@ -27,6 +28,12 @@ export default function Navbar() {
   const { data: session } = useSession();
   const [open, setOpen] = useState(false);
   const { cartItems, removeProduct } = useCartStore();
+
+  const totalPrice = cartItems.reduce((totalPrice, item) => {
+    return totalPrice + item.price * item.quantity;
+  }, 0);
+
+  console.log(totalPrice);
 
   return (
     <>
@@ -102,7 +109,7 @@ export default function Navbar() {
                                             {product.name}
                                           </a>
                                         </h3>
-                                        <p className='ml-4'>{product.price}</p>
+                                        <p className='ml-4'>{product.price}.00</p>
                                       </div>
                                     </div>
                                     <div className='flex flex-1 items-end justify-between text-sm'>
@@ -131,7 +138,7 @@ export default function Navbar() {
                       <div className='border-t border-gray-200 px-4 py-6 sm:px-6'>
                         <div className='flex justify-between text-base font-medium text-gray-900'>
                           <p>Subtotal</p>
-                          <p>$262.00</p>
+                          <p>{formatPrice(totalPrice * 100)}</p>
                         </div>
                         <p className='mt-0.5 text-sm text-gray-500'>
                           Shipping and taxes calculated at checkout.

@@ -3,8 +3,6 @@ import formatPrice from "@/utils/priceFormat";
 import Stripe from "stripe";
 
 export default function ProductPage({ product }) {
-  console.log(product);
-
   return (
     <div className='bg-white'>
       <div className='pt-6 pb-16 sm:pb-24'>
@@ -20,9 +18,7 @@ export default function ProductPage({ product }) {
                 </p>
               </div>
               <p>{product.description}</p>
-              <AddToCart
-                product={{ ...product, price: formatPrice(product.price) }}
-              />
+              <AddToCart product={{ ...product, price: product.price / 100 }} />
             </div>
             <div className='mt-8 lg:col-span-5 lg:col-start-1 lg:row-span-2 lg:row-start-1 lg:mt-0'>
               <h2 className='sr-only'>Image</h2>
