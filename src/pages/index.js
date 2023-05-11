@@ -3,15 +3,15 @@ import Stripe from "stripe";
 
 import formatPrice from "@/utils/priceFormat";
 import Link from "next/link";
-import Hero from '@/components/Hero';
+import Hero from "@/components/Hero";
 
 const Index = ({ products }) => {
   return (
     <div className='bg-white'>
       <Hero />
       <div className='mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8'>
-        <h2 className='text-2xl font-bold tracking-tight text-gray-900'>
-          Customers also purchased
+        <h2 className='text-2xl font-semibold tracking-tight text-gray-900'>
+          Trending Products
         </h2>
 
         <div className='mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8'>
