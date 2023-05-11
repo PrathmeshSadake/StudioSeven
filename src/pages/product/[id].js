@@ -1,3 +1,4 @@
+import AddToCart from "@/components/AddToCart";
 import formatPrice from "@/utils/priceFormat";
 import Stripe from "stripe";
 
@@ -19,12 +20,9 @@ export default function ProductPage({ product }) {
                 </p>
               </div>
               <p>{product.description}</p>
-              <button
-                className='bg-gray-900 text-white
-                  tracking-widest rounded-md px-5 py-2 text-sm font-medium'
-              >
-                Add to Cart
-              </button>
+              <AddToCart
+                product={{ ...product, price: formatPrice(product.price) }}
+              />
             </div>
             <div className='mt-8 lg:col-span-5 lg:col-start-1 lg:row-span-2 lg:row-start-1 lg:mt-0'>
               <h2 className='sr-only'>Image</h2>
