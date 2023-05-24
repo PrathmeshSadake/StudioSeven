@@ -3,6 +3,7 @@ import Layout from "@/components/Layout";
 import "@/styles/globals.css";
 
 import { Poppins } from "next/font/google";
+import { Toaster } from "react-hot-toast";
 
 const poppins = Poppins({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800"],
@@ -16,6 +17,7 @@ export default function App({
   return (
     <SessionProvider session={session}>
       <main className={poppins.className}>
+        <Toaster />
         <Layout>
           <Component {...pageProps} />
         </Layout>

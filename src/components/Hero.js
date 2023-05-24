@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 const Hero = () => {
   return (
@@ -39,12 +40,12 @@ const Hero = () => {
             Mid-Season Sale
           </h1>
           <div className='mt-4 sm:mt-6'>
-            <a
-              href='#'
+            <Link
+              href='/products'
               className='inline-block rounded-md border border-transparent bg-indigo-600 py-3 px-8 font-medium text-white hover:bg-indigo-700'
             >
               Shop Collection
-            </a>
+            </Link>
           </div>
         </div>
       </div>

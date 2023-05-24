@@ -3,6 +3,8 @@ import { Dialog, Disclosure, Menu, Transition } from "@headlessui/react";
 import {
   Bars3Icon,
   BellIcon,
+  MinusIcon,
+  PlusIcon,
   ShoppingBagIcon,
   ShoppingCartIcon,
   XMarkIcon,
@@ -12,12 +14,11 @@ import Link from "next/link";
 import Image from "next/image";
 import useCartStore from "@/store";
 import formatPrice from "@/utils/priceFormat";
+import { useRouter } from "next/router";
 
 const navigation = [
-  { name: "Dashboard", href: "#", current: true },
-  { name: "Team", href: "#", current: false },
-  { name: "Projects", href: "#", current: false },
-  { name: "Calendar", href: "#", current: false },
+  { name: "Home", href: "/" },
+  { name: "Products", href: "/products" },
 ];
 
 function classNames(...classes) {
@@ -27,13 +28,19 @@ function classNames(...classes) {
 export default function Navbar() {
   const { data: session } = useSession();
   const [open, setOpen] = useState(false);
-  const { cartItems, removeProduct } = useCartStore();
+  const { cartItems, removeProduct, addProduct } = useCartStore();
+
+  const pathname = useRouter().pathname;
 
   const totalPrice = cartItems.reduce((totalPrice, item) => {
     return totalPrice + item.price * item.quantity;
   }, 0);
 
-  console.log(totalPrice);
+  const handleAddToCart = (product) => {
+    const { id, name, price, image, quantity } = product;
+    addProduct({ id, name, price, image, quantity });
+    // toast.success(`${name} added to cart`);
+  };
 
   return (
     <>
@@ -109,15 +116,29 @@ export default function Navbar() {
                                             {product.name}
                                           </a>
                                         </h3>
-                                        <p className='ml-4'>{product.price}.00</p>
+                                        <p className='ml-4'>
+                                          {product.price}.00
+                                        </p>
                                       </div>
                                     </div>
                                     <div className='flex flex-1 items-end justify-between text-sm'>
-                                      <p className='text-gray-500'>
-                                        Qty {product.quantity}
-                                      </p>
+                                      <div className='flex items-center space-x-2'>
+                                        <MinusIcon
+                                          className='w-4 h-4 cursor-pointer'
+                                          onClick={() => removeProduct(product)}
+                                        />
+                                        <p className='px-1 py-0.5 border border-gray-500'>
+                                          {product.quantity}
+                                        </p>
+                                        <PlusIcon
+                                          className='w-4 h-4 cursor-pointer'
+                                          onClick={() =>
+                                            handleAddToCart(product)
+                                          }
+                                        />
+                                      </div>
 
-                                      <div className='flex'>
+                                      {/* <div className='flex'>
                                         <button
                                           type='button'
                                           onClick={() => removeProduct(product)}
@@ -125,7 +146,7 @@ export default function Navbar() {
                                         >
                                           Remove
                                         </button>
-                                      </div>
+                                      </div> */}
                                     </div>
                                   </div>
                                 </li>
@@ -209,7 +230,7 @@ export default function Navbar() {
                           key={item.name}
                           href={item.href}
                           className={classNames(
-                            item.current
+                            pathname === item.href
                               ? "bg-gray-900 text-white"
                               : "text-gray-300 hover:bg-gray-700 hover:text-white",
                             "rounded-md px-3 py-2 text-sm font-medium"
@@ -315,12 +336,11 @@ export default function Navbar() {
                     as='a'
                     href={item.href}
                     className={classNames(
-                      item.current
+                      pathname === item.href
                         ? "bg-gray-900 text-white"
                         : "text-gray-300 hover:bg-gray-700 hover:text-white",
                       "block rounded-md px-3 py-2 text-base font-medium"
                     )}
-                    aria-current={item.current ? "page" : undefined}
                   >
                     {item.name}
                   </Disclosure.Button>
