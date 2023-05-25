@@ -127,7 +127,7 @@ export default function Navbar() {
                                           className='w-4 h-4 cursor-pointer'
                                           onClick={() => removeProduct(product)}
                                         />
-                                        <p className='px-1 py-0.5 border border-gray-500'>
+                                        <p className='px-2 py-[0.2] border border-gray-500'>
                                           {product.quantity}
                                         </p>
                                         <PlusIcon
@@ -248,10 +248,19 @@ export default function Navbar() {
                   {session ? (
                     <Menu as='div' className='relative ml-3'>
                       <div className='flex space-x-6 items-center'>
-                        <ShoppingBagIcon
+                        <div
+                          className='relative cursor-pointer'
                           onClick={() => setOpen(true)}
-                          className='h-8 w-8 text-white cursor-pointer'
-                        />
+                        >
+                          <ShoppingBagIcon className='h-8 w-8 text-white' />
+
+                          {cartItems.length > 0 && (
+                            <span className='bg-indigo-600 text-white text-sm font-medium w-5 h-5 rounded-full absolute left-4 bottom-4 flex items-center justify-center'>
+                              {cartItems.length}
+                            </span>
+                          )}
+                        </div>
+
                         <Menu.Button className='flex rounded-full overflow-hidden bg-gray-800 text-sm'>
                           <span className='sr-only'>Open user menu</span>
                           <Image
