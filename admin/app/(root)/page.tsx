@@ -1,11 +1,18 @@
-import { Button } from "@/components/ui/button";
-const Home = () => {
+import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
+
+const SetupPage = () => {
   return (
     <div>
-      <p>Hello Admin Dashboard!</p>
-      <Button variant='outline'>Button</Button>
+      <SignedIn>
+        {/* Mount the UserButton component */}
+        <UserButton afterSignOutUrl='/' />
+      </SignedIn>
+      <SignedOut>
+        {/* Signed out users get sign in button */}
+        <SignInButton />
+      </SignedOut>
     </div>
   );
 };
 
-export default Home;
+export default SetupPage;
