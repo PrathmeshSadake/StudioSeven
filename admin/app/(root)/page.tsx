@@ -1,18 +1,21 @@
-import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
+"use client";
+
+import { useEffect } from "react";
+import { useParams } from "next/navigation";
+
+import { useStoreModal } from "@/hooks/use-store-modal";
 
 const SetupPage = () => {
-  return (
-    <div>
-      <SignedIn>
-        {/* Mount the UserButton component */}
-        <UserButton afterSignOutUrl='/' />
-      </SignedIn>
-      <SignedOut>
-        {/* Signed out users get sign in button */}
-        <SignInButton />
-      </SignedOut>
-    </div>
-  );
+  const onOpen = useStoreModal((state) => state.onOpen);
+  const isOpen = useStoreModal((state) => state.isOpen);
+
+  useEffect(() => {
+    if (!isOpen) {
+      onOpen();
+    }
+  }, [isOpen, onOpen]);
+
+  return null;
 };
 
 export default SetupPage;
